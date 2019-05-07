@@ -1,0 +1,15 @@
+<div class="main row">
+    <div class="row">
+        <div class="col">
+            <period-picker @onSubmit="periodRequested"></period-picker>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <app-table @rowClicked="tableRowClicked" :data="tableData"></app-table>
+        </div>
+        <div class="col-sm-4 record">
+            <record @recordSubmited="handleRefreshTableData" :data="activeLog"></record>
+        </div>
+    </div>
+</div>

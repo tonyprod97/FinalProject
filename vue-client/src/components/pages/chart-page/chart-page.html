@@ -1,0 +1,12 @@
+<div class="chart-page">
+    <div class="row">
+        <div class="col">
+            <period-picker @onSubmit="periodRequest"></period-picker>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <chart :data="chartData"></chart>
+        </div>
+    </div>
+</div>

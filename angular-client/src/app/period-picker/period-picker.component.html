@@ -1,0 +1,19 @@
+<div class="holder">
+    <div class="main">
+      <mat-form-field id="left">
+        <input matInput [matDatepicker]="picker1" placeholder="Starting date"
+        [value]="from" (dateChange)="dateChanged(false, $event)">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker2" placeholder="Final date"
+        [value]="to"  (dateChange)="dateChanged(true, $event)">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="onRequest()" [disabled]="validateDates()">Request</button>
+    </div>
+    <mat-error *ngIf="validateDates()">Starting date must be before final date</mat-error>
+</div>

@@ -1,0 +1,25 @@
+.center{
+  width: 280px;
+  margin: 10px auto;
+}
+
+.main-div{
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color:red;
+}
+
+.text-center {
+  text-align: center;
+}
+
+table {
+  position: relative;
+  left: 15%;
+  right: 10%;
+}

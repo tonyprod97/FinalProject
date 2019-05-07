@@ -1,0 +1,30 @@
+<div class="main">
+    <div class="row">
+      
+        <mat-card class="example-card center">
+          <mat-card-title>
+              Statistic
+            </mat-card-title>
+            <mat-card-subtitle *ngIf="period">
+              Displaying statistic for logs from: {{period.from.toLocaleDateString()}} - to: {{period.to.toLocaleDateString()}}
+            </mat-card-subtitle>
+            
+            <mat-card-subtitle *ngIf="!period">
+                Displaying statistic for all your logs
+              </mat-card-subtitle>
+              <mat-card-content *ngIf="requestedStatistic">
+                <mat-list>
+                  <mat-list-item>Number of logs: {{requestedStatistic.totalLogs}}</mat-list-item>
+                  <mat-list-item>Highest weight: {{requestedStatistic.max.value}}kg on {{requestedStatistic.from.toLocaleDateString()}}</mat-list-item>
+                  <mat-list-item>Lowest weight: {{requestedStatistic.min.value}}kg on {{requestedStatistic.to.toLocaleDateString()}}</mat-list-item>
+                  <mat-list-item>Average: {{requestedStatistic.average}}kg</mat-list-item>
+                </mat-list>
+              </mat-card-content>
+              <mat-card-footer>
+                <app-period-picker (request)="onRequest($event)"></app-period-picker>
+
+              </mat-card-footer>
+        </mat-card>
+      </div>
+      
+</div>

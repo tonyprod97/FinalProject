@@ -1,0 +1,15 @@
+<mat-sidenav-container>
+  <mat-sidenav *ngIf="authService.isUserLogedIn()" #sidenav color="primary" mode="side" [(opened)]="toggleSideNav">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <button mat-button routerLink = "table">Table</button>
+       </mat-toolbar-row>
+        <mat-toolbar-row>
+            <button mat-button routerLink = "chart">Chart</button>
+          </mat-toolbar-row>
+      </mat-toolbar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

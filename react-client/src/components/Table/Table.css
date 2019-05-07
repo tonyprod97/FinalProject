@@ -1,0 +1,11 @@
+th, td {
+    text-align: center !important;
+}
+
+td:hover {
+    cursor: pointer;
+}
+
+.dataTables_info {
+    text-align: center;
+}

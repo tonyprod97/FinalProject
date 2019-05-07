@@ -1,0 +1,21 @@
+#table {
+  margin-top: 30px;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  height: fit-content;
+}
+
+table {
+  flex: 1;
+}
+
+td {
+  text-align: initial;
+  cursor: pointer;
+}
+
+td:hover {
+  color: blue !important;
+}

@@ -1,0 +1,25 @@
+
+<div class="statistic">
+    <div class ="row">
+    </div>
+    <div class ="row">
+      <div class ="card">
+        <div class ="card-header">
+          {{title}}
+        </div>
+        <div class ="card-body" v-if="model.from">
+          <ul class  ="list-group list-group-flush">
+            <li class  ="list-group-item">Total logs: {{model.totalLogs}}</li>
+            <li class  ="list-group-item">Highest weight:{{model.max.value}} kg on {{(new Date(model.max.date)).toLocaleDateString()}}</li>
+            <li class  ="list-group-item">Lowest weight:{{model.min.value}} kg  on {{(new Date(model.min.date)).toLocaleDateString()}}</li>
+            <li class  ="list-group-item">Average weight:{{model.average}} kg</li>
+          </ul>
+        </div>
+        <div class ="card-footer">
+          <period-picker @onSubmit="onRequest"></period-picker>
+        </div>
+      </div>  
+    </div>
+
+</div>
+

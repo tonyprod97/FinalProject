@@ -1,0 +1,11 @@
+.record button.btn{
+    margin: 5px;
+}
+
+.arrow {
+    display: none !important;
+}
+
+.alert-success {
+    position: absolute !important;
+}

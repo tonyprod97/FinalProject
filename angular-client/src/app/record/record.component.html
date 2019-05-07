@@ -1,0 +1,35 @@
+<div class="main-div">
+    <mat-card class="example-card">
+    <mat-card-title>Log your weight</mat-card-title>
+    <mat-card-subtitle *ngIf="errorMessage">{{errorMessage}}</mat-card-subtitle>
+      <mat-card-content>
+        <form class="example-form" [formGroup]="form" >
+          <table class="example-full-width" cellspacing="0">
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Date" type="date" name="date"  formControlName="date" required>
+                    <mat-error *ngIf="hasError('date', 'required')">Date is required</mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+            <tr>
+              <td><mat-form-field class="example-full-width">
+                    <input matInput placeholder="Weight in kg" type="number" min="0.1" name="value" formControlName="value" required>
+                    <mat-error *ngIf="hasError('value', 'required')">Value is required</mat-error>
+                    <mat-error *ngIf="hasError('value', 'min')">Value must be greater than 0</mat-error>
+                  </mat-form-field>
+              </td>
+            </tr>
+          </table>
+
+          <mat-card-actions>
+            <button *ngIf="activeLog.id" mat-button (click)="resetActiveLog()" [disabled]="form.invalid" type="submit" color="info">Clear</button>
+            <button *ngIf="activeLog.id" mat-raised-button (click)="onDelete()" [disabled]="form.invalid" type="submit" color="warn">Delete</button>
+            <button *ngIf="!activeLog.id" mat-raised-button (click)="onSave()" [disabled]="form.invalid" type="submit" color="primary">Save</button>
+            <button *ngIf="activeLog.id" mat-raised-button  (click)="onUpdate()" [disabled]="form.invalid" type="submit" color="primary">Update</button>
+          </mat-card-actions>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

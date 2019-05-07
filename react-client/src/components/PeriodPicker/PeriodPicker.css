@@ -1,0 +1,7 @@
+div.form-group > label {
+    margin-right: 5px;
+}
+
+.error {
+    margin: 5px;
+}

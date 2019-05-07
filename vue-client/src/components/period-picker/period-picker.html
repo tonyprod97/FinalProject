@@ -1,0 +1,16 @@
+<div class="period-picker">
+        <form class="needs-validation form-inline justify-content-center" novalidate @submit="onSubmit">
+            <div class="form-group mb-2">
+              <label htmlFor="startingDate">Starting date</label>
+              <input type="date" class="form-control" name="startingDate" placeholder="Starting date" v-model="from" required/>
+            </div>
+            <div class="form-group mb-2 mx-sm-3">
+              <label htmlFor="finalDate">Final date</label>
+              <input type="date" class="form-control" name="finalDate" placeholder="Final date" v-model="to" required/>
+            </div>
+              <button class="btn btn-primary align-self-start" type="submit">Request</button>
+              <div v-if="errorMessage" class="error">
+                {{errorMessage}}
+              </div>
+        </form>
+      </div>

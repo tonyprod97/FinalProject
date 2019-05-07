@@ -1,0 +1,24 @@
+<div class="row justify-content-center main">
+    <form class="form-login" @submit="submit">
+      <div class="form-group" v-for="(value, key, index) in formControls" :key="index">
+        <label :for="key">{{value.label}}</label>
+        <input :type="value.type" class="form-control" :name="key" :aria-describedby="key" :placeholder="'Enter '+value.label"
+                v-model="value.value"  :required="value.required" v-on:change="error = null"
+        />
+          <div class="invalid-feedback">
+            Please enter a {{key}}.
+          </div>
+      </div>
+      <div class="error" v-if="error">{{error}}</div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <div v-if="!this.registerMode" id="link-to">
+        <label>Don't have account? </label>
+        <a href="/register">Register</a>
+      </div>
+    </form>
+    <div data-delay="1500" class="toast">
+      <div class="toast-body">
+        {{toastMessage}}
+      </div>
+    </div>
+</div>

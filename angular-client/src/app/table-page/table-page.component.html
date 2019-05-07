@@ -1,0 +1,11 @@
+<div class="picker">
+  <app-period-picker (request)="periodRequest($event)"></app-period-picker>
+</div>
+<div class="row">
+  <div class="table">
+    <app-table [data]="tableData"></app-table>
+  </div>
+  <div class="record">
+    <app-record></app-record>
+  </div>
+</div>

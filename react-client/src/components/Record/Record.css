@@ -1,0 +1,18 @@
+.card {
+    padding: 15px
+}
+.error {
+    color: red;
+}
+
+.Record {
+    max-width: 200px;
+}
+
+.button-container button.btn {
+    margin:5px;
+}
+
+.alert-success {
+    position: absolute !important;
+}

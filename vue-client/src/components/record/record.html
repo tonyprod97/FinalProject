@@ -1,0 +1,35 @@
+<div class="record">
+    <div class="card text-white bg-secondary text-center">
+      <form class="needs-validation" v-on:submit="onSubmit">
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input class="form-control" 
+                  type="date"
+                  v-model="viewModel.date"
+                  name="date"
+                  required/>
+        </div>
+
+        <div class="form-group">
+          <label for="weight">Weight</label>
+          <input class="form-control" 
+                  type="number"
+                  min="0.1"
+                  step="0.01"
+                  v-model="viewModel.value"
+                  name="weight"
+                  required/>
+        </div>
+        <div>
+          <button v-if="viewModel.id" type="button" @click="clearForm" class="btn btn-info btn-sm">Clear</button>
+          <button v-if="viewModel.id" type="button" @click="onDelete" class="btn btn-danger">Delete</button>
+          <button type="submit" class="btn btn-success" >{{submitText}}</button>
+        </div>
+        <div v-if="showAlert" class="alert alert-success" role="alert">
+          {{alertMessage}}
+        </div>
+      </form>
+    </div>
+    <modal :message="errorMessage" :closeFunc="clearForm" :updateFunc="onSubmit"></modal>
+  </div>
+

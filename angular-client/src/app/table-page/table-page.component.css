@@ -1,0 +1,17 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.table {
+  flex: 2;
+}
+
+.record {
+  flex: 1;
+}
+
+.picker {
+  margin-top:20px;
+}

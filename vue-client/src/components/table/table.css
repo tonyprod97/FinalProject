@@ -1,0 +1,12 @@
+.v-menu>.v-menu__content {
+    top: 0px !important;
+    left: 0px !important;
+}
+
+td:hover {
+    cursor: pointer;
+}
+
+.v-card.theme--light {
+    background-color: red;
+}

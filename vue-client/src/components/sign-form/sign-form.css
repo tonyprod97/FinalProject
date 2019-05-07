@@ -1,0 +1,24 @@
+div .error {
+    text-align: center;
+    color: red;
+    margin: 5px;
+}
+#link-to {
+    position: relative;
+    top: 10px;
+    text-align: start;
+}
+#link-to label {
+    position: relative;
+    right: 10px;
+}
+
+form {
+    margin-top:50px;
+    text-align: center;
+}
+
+.toast {
+    color: green;
+    font-size: 18px;
+}

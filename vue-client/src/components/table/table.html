@@ -1,0 +1,29 @@
+<div class="app-table">
+    <v-card-title>
+    Weight logs
+    <v-spacer></v-spacer>
+    <v-text-field
+        v-model="search"
+        append-icon="search"
+        label="Search"
+        single-line
+        hide-details
+    ></v-text-field>
+    </v-card-title>
+    <v-data-table
+    :headers="headers"
+    :items="data"
+    :search="search"
+    class="elevation-1"
+  >
+    <template v-slot:items="props">
+        <tr @click="rowClicked(props.item)">
+            <td class="text-xs-center" >{{ props.item.value }}</td>
+            <td class="text-xs-center">{{ (new Date(props.item.date)).toLocaleDateString() }}</td>
+        </tr>
+    </template>
+    <v-alert v-slot:no-results :value="true" color="error" icon="warning">
+      Your search for "{{ search }}" found no results.
+    </v-alert>
+  </v-data-table>
+</div>

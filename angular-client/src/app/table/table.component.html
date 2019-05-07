@@ -1,0 +1,18 @@
+  <div id="table" class="mat-elevation-z8">
+    <table color="primary" matSort mat-table [dataSource]="dataSource" (matSortChange)="customSort($event)">
+
+      <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight (kg) </th>
+          <td mat-cell *matCellDef="let log" (click)="rowClicked(log)"> {{log.value}} </td>
+        </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let log" (click)="rowClicked(log)"> {{log.date.toLocaleDateString()}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>

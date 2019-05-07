@@ -1,0 +1,42 @@
+<div class="main-div">
+  <mat-card class="example-card center">
+
+    <mat-card-content>
+      <form class="example-form" [formGroup]="form" (ngSubmit)="onRegister()" (change)="onFormChange()">
+        <div class="error text-center" *ngIf="errorMessage && errorMessage!='undefined'">{{errorMessage}}</div>
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="User Name" [(ngModel)]="username" name="username" formControlName="userName" required>
+                </mat-form-field>
+              </td>
+            </tr>
+
+          <tr>
+            <td><mat-form-field class="example-full-width">
+                  <input matInput placeholder="First Name" [(ngModel)]="firstName" type="text" name="firstName" formControlName="firstName">
+                </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td><mat-form-field class="example-full-width">
+                  <input matInput placeholder="Last Name" [(ngModel)]="lastName" type="text" name="lastName" formControlName="firstName">
+                </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td><mat-form-field class="example-full-width">
+                  <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" formControlName="password" required>
+                </mat-form-field>
+            </td>
+          </tr>
+        </table>
+
+        <mat-card-actions>
+          <button mat-raised-button [disabled]="form.invalid || form.pristine" type="submit" color="primary">Register</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
